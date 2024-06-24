@@ -1,38 +1,83 @@
 .App {
-  text-align: center;
+  display: flex;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+.sidebar {
+  width: 250px;
   background-color: #282c34;
-  min-height: 100vh;
+  color: white;
+  padding: 20px;
+}
+
+.chat-container {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
+}
+
+.messages {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.message {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+}
+
+.message.user {
+  background-color: #d1e7dd;
+  align-self: flex-end;
+}
+
+.message.bot {
+  background-color: #f8d7da;
+}
+
+.input-container {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.prompt-input {
+  flex-grow: 1;
+  margin-right: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.custom-file-upload {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.custom-file-upload i {
+  font-size: 24px;
+  color: #ff6666;
+}
+
+#file-upload {
+  display: none;
+}
+
+.send-button {
+  background-color: #ff6666;
   color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.send-button i {
+  font-size: 18px;
 }
